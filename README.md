@@ -11,9 +11,7 @@
 
 2. Create a role with s3 access.
 
-3. Launch an ec2 instance with the role created in step 1, inside the private subnet of VPC, and install apache through
-
-bootstrapping. ( You need to have your NAT gateway attached to your private subnet )
+3. Launch an ec2 instance with the role created in step 1, inside the private subnet of VPC, and install apache through bootstrapping. ( You need to have your NAT gateway attached to your private subnet )
 
 4. Create a load balancer in public subnet.
 
@@ -31,8 +29,7 @@ Add variable in the file inside vars folder as per requirement.
 
  - Automate the process of stop (For cost saving)
 
-Automate the process of stop to a group of EC2 instances (based on tags). Ensure that there is no user
-logged into the servers, and CPU usage is idle ( less than 10% ) for the particular period of time before stopping. The idle period and tag will be passed as arguments.
+Automate the process of stop to a group of EC2 instances (based on tags). Ensure that there is no user logged into the servers, and CPU usage is idle ( less than 10% ) for the particular period of time before stopping. The idle period and tag will be passed as arguments.
 
     usage: autostop <Tag name> < idle period>
 
@@ -40,8 +37,7 @@ For example:
 
     autostop <development> 60
 
-If the current time is 6 PM, the script needs to check the idle development instances in the last 60
-minutes ( 5 PM to 6 PM ) and make sure no users are logged into those instances before stopping them. Don’t set up permanent cloudwatch alarm to stop the instances. The script needs to run on-demand for stopping the instances.
+If the current time is 6 PM, the script needs to check the idle development instances in the last 60 minutes ( 5 PM to 6 PM ) and make sure no users are logged into those instances before stopping them. Don’t set up permanent cloudwatch alarm to stop the instances. The script needs to run on-demand for stopping the instances.
 
 ----------
  Task 3
